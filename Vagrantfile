@@ -121,16 +121,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "vim-default-editor"
     chef.add_recipe "ros"
 #    chef.add_recipe "verdino"
-#    chef.add_role "devel"
+    chef.add_role "devel"
     chef.json = {
-      "keyboard" => {
-        "layout" => "es",
+      :keyboard => {
+        :layout => "es",
       },
-      "locale" => {
-        "language" => "es",
-        "territory" => "ES",
+      :locale => {
+        :language => "es",
+        :territory => "ES",
       },
-      "tz" => "Atlantic/Canary"
+      :tz => "Atlantic/Canary"
     }
   #
   #   # You may also specify custom JSON attributes:
