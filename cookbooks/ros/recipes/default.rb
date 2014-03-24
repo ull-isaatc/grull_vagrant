@@ -19,14 +19,15 @@ end
 
 ## Initialize rosdep
 
-##execute "rosdep init" do
-##  user "root"
-##  not_if do ::File.exists?("/etc/ros/rosdep/sources.list.d/20-default.list") end
-##end
+execute "rosdep init" do
+  user "root"
+  not_if do ::File.exists?("/etc/ros/rosdep/sources.list.d/20-default.list") end
+end
 
-##execute "rosdep update" do
-##  user "vagrant"
-##end
+execute "rosdep update" do
+  user "vagrant"
+  environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
+end
 
 ## Environment setup
 
