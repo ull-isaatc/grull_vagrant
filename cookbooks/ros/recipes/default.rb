@@ -31,6 +31,19 @@ end
 
 ## Environment setup
 
-template "#{node[:ros][:bash_profile_dir]}/ros_setup.sh" do
-  source "ros_setup.sh.erb"
+template "/home/vagrant/.ros.bashrc" do
+  source "ros.bashrc.erb"
+end
+
+ruby_block "insert_source_ros.bashrc" do
+  block do
+    newlines = <<EOF
+# setup your ROS environment
+source ~/.ros.bashrc
+EOF
+
+    file = Chef::Util::FileEdit.new("/home/vagrant/.bashrc")
+    file.insert_line_if_no_match("# setup your ROS environment", newlines)
+    file.write_file
+  end
 end

@@ -119,9 +119,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "locale"
     chef.add_recipe "ubuntu-desktop"
     chef.add_recipe "vim-default-editor"
+    # install ROS packages
     chef.add_recipe "ros"
-#    chef.add_recipe "verdino"
+    # install GRULL ROS packages
+    #chef.add_recipe "grull-verdino"
+    # configure for development
     chef.add_role "devel"
+    #
     chef.json = {
       :keyboard => {
         :layout => "es",
