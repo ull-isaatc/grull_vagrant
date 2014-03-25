@@ -43,7 +43,7 @@ source ~/.ros.bashrc
 EOF
 
     file = Chef::Util::FileEdit.new("/home/vagrant/.bashrc")
-    file.insert_line_if_no_match("# setup your ROS environment", newlines)
+    file.insert_line_if_no_match("^# setup your ROS environment", newlines)
     file.write_file
   end
 end
