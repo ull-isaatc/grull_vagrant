@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ###
   ### We are working with 64-bit Ubuntu 12.04 Precise Pangolin but it 
   ### should work with its 32-bit version.
-  config.vm.box = "ffuenf/ubuntu-12.04.4-server-amd64"
+  config.vm.box = "chef/ubuntu-12.04"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -90,6 +90,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
+  ###
+  ### If is available, Valgrant-omnibus is used to install Chef in
+  ### provisioner-less boxes.
+  if Vagrant.has_plugin?("vagrant-omnibus")
+    config.omnibus.chef_version = :latest
+  end
+
+  ###
+  ### Valgrant-librarian-chef is used to download the required Chef cookbooks
+  ### and its dependencies.
+  unless Vagrant.has_plugin?("vagrant-librarian-chef")
+    raise 'Vagrant-librarian-chef plugin is required!. Try "vagrant plugin install vagrant-librarian-chef" first' 
+  end
+  config.librarian_chef.cheffile_dir = "chef"
   ###
   ### Valgrant-librarian-chef is used to download the required Chef cookbooks
   ### and its dependencies.
