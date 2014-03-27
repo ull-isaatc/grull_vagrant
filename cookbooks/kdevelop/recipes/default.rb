@@ -1,4 +1,4 @@
 package "kdevelop" do
-  options "--install-suggests"
+#  options "--install-suggests"
   action :install
 end
