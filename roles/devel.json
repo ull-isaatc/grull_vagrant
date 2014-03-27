@@ -3,5 +3,10 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "The role for systems provisioned for development",
-  "run_list": [ "recipe[git]", "recipe[kdevelop]" ]
+  "run_list": [
+    "recipe[git]",
+    "recipe[github]",
+    "recipe[kdevelop]",
+    "recipe[ros-workspace]"
+  ]
 } 

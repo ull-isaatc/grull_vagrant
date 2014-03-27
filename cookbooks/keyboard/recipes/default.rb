@@ -1,4 +1,4 @@
-template "#{node[:keyboard][:config_file]}" do
+template node[:keyboard][:config_file] do
   source "keyboard.erb"
 end
 

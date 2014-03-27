@@ -35,7 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
-  # config.ssh.forward_agent = true
+  config.ssh.forward_agent = true
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -104,7 +104,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       file.source = "~/.gitconfig"
       file.destination = "~/.gitconfig"
     end
-  end  
+  end
 
   ###
   ### Somebody says it is more programmer friendly than Puppet
@@ -122,7 +122,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # install ROS packages
     chef.add_recipe "ros"
     # install GRULL ROS packages
-    #chef.add_recipe "grull-verdino"
+    chef.add_recipe "grull-verdino"
     # configure for development
     chef.add_role "devel"
     #

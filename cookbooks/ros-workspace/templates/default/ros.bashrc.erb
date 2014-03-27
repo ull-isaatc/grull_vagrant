@@ -1,0 +1,2 @@
+<%= render "ros.bashrc.erb", :cookbook => "ros" %>
+source <%= node["ros-workspace"][:dir] %>/devel/setup.bash 

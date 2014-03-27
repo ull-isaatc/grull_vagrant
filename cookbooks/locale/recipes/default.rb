@@ -1,4 +1,4 @@
-template "#{node[:locale][:locale_gen_file]}" do
+template node[:locale][:locale_gen_file] do
   source "locales.gen.erb"
 end
 

@@ -1,0 +1,2 @@
+<%= render "ros.bashrc.erb", :cookbook => "ros-workspace" %>
+export GAZEBO_MODEL_PATH="<%= node["ros-workspace"][:dir] %>/src/grull_gazebo_models/models"
