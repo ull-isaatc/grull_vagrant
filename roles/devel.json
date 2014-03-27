@@ -3,6 +3,10 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "The role for systems provisioned for development",
+  "override_attributes": {
+    "grull-verdino": {
+        "rosinstall_path": "devel.rosinstall"
+  }},
   "run_list": [
     "recipe[git]",
     "recipe[github]",

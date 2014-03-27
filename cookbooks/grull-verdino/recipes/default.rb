@@ -3,7 +3,7 @@ include_recipe "github"
 
 local_repository = "#{Chef::Config[:file_cache_path]}/grull-verdino"
 source_rosinstall = "#{local_repository}/#{node["grull-verdino"][:rosinstall_path]}"
-target_rosinstall = "#{node["ros-workspace"][:dir]}/src/#{node["grull-verdino"][:rosinstall_path]}"
+target_rosinstall = "#{node["ros-workspace"][:dir]}/src/.rosinstall"
 
 ## Install dependencies
 
