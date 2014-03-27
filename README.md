@@ -10,12 +10,12 @@ environments using virtual machines. These are specified through Vagrantfiles,
 in a similar manner as ```make``` uses Makefiles.
 
 The created virtual machines must be provisioned with all the software that
-we need. So here is where we need Chef, a configuration management tool written
+we need. So here is where we use Chef, a configuration management tool written
 in Ruby.
 
 Chef is a tool used to streamline the task of configuring and maintaining
 company's servers, so the same recipes can be used to automatically provision
-and configure real machines, no only virtual machinen used in development.
+and configure real machines, no only virtual machines used in development.
 
 ## Requirements
 
