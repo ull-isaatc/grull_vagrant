@@ -58,8 +58,7 @@ to add the role ```devel```:
 ```
 
 Finally, if you want a full GRULL Verdino ROS development environment, with all
-Verdino ROS packages downloaded to the workspace, you have to add the recipe
-```grull-verdino```:
+Verdino ROS packages downloaded to the workspace, you have to add the recipe ```grull-verdino```:
 
 ```ruby
     chef.add_recipe "grull-verdino"
