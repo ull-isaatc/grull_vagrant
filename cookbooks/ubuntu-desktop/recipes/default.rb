@@ -3,6 +3,10 @@ package "ubuntu-desktop" do
   action :install
 end
 
+service "lightdm" do
+  action :nothing
+end
+
 # Install software translations
 
 execute "install-language" do
@@ -25,8 +29,5 @@ end
 execute "set-session" do
   user "root"
   command "/usr/lib/lightdm/lightdm-set-defaults -s gnome-fallback"
-end
-
-service "lightdm" do
-  action :start
+  notifies :restart, "service[lightdm]", :delayed
 end
