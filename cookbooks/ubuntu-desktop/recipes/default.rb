@@ -5,7 +5,7 @@ end
 
 # Install software translations
 
-execute "install-language}" do
+execute "install-language" do
   user "root"
   command "apt-get -y install $(check-language-support -l #{node[:desktop][:language]})"
 end
